@@ -1,0 +1,16 @@
+{block title}Výpis miest{/block}
+{block description}Výpis všetkých miest.{/block}
+{block content}
+<table>
+    <tr n:foreach="$DeliveryPlaces as $deliveryPlace">
+        <td>
+            <h2><a n:href="DeliveryPlace: $deliveryPlace->id_address">{$deliveryPlace->rajon}</a></h2>
+            {$deliveryPlace->kraj}
+            {$deliveryPlace->okres}
+            {$deliveryPlace->kraj}
+            <br>
+            
+        </td>
+    </tr>
+</table>
+{/block}

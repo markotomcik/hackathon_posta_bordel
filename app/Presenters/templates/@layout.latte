@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="{include description|striptags}">
+
+        <title>{include title|striptags}</title>
+
+        {block css}
+            <link rel="stylesheet" href="{$basePath}/css/style.css">
+        {/block}
+
+        {block head}{/block}
+    </head>
+
+    <body>
+        <header>
+            <h1>Postaris</h1>
+        </header>
+
+        <p n:foreach="$flashes as $flash" class="message">{$flash->message}</p>
+        <br clear="both">
+
+        <article>
+            <header>
+                <h1>{include title}</h1>
+            </header>
+            <section>
+                {include content} 
+            </section>
+        </article>
+
+        <footer>
+            <p>
+
+            </p>
+        </footer>
+
+        {block scripts}
+            <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+            <script src="{$basePath}/js/main.js"></script>
+        {/block}
+    </body>
+</html>

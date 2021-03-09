@@ -1,0 +1,24 @@
+parameters:
+    defaultDeliveryPlaceID: '1'
+
+
+application:
+	errorPresenter: Error
+	mapping:
+		*: App\*Module\Presenters\*Presenter
+
+
+session:
+	expiration: 14 days
+
+
+di:
+	export:
+		parameters: no
+		tags: no
+
+
+services:
+	router: App\Router\RouterFactory::createRouter
+	DeliveryPlaceManager: App\CoreModule\Model\DeliveryPlaceManager
+	DeliveryPlacePresenter: App\CoreModule\Presenters\DeliveryPlacePresenter(%defaultDeliveryPlaceID%) 
